@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Implementando libreria FPDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .content {
+      max-width: 500px;
+      margin:30px auto;
+    }
+
+    .wrapper-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .fields {
+      display: flex;
+      flex:0 0 100%;
+      align-items: center;
+      margin-bottom:20px;
+    }
+
+    .titulo-formulario {
+      text-align: center;
+      width: 100%;
+      border-bottom:1px solid rgb(0 0 0 / 30%);
+      padding-bottom:10px;
+      margin-bottom:20px;
+    }
+
+    label {
+      margin-right:10px;
+    }
+
+    input, select {
+      padding: 10px;
+      width:100%;
+    }
+
+    input[type="submit"] {
+      background:green;
+      color:#fff;
+      font-weight: bold;
+      border:1px solid rgb(0 0 0 / 30%);
+      cursor:pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #fff;
+      color:green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <form target="_blank" action="create_pdf.php" method="POST" enctype="multipart/form-data">
+
+      <div class="wrapper-form">
+        <h1 class="titulo-formulario">Datos a imprimir</h1>
+        <div class="fields">
+          <label for="tipo_pdf">Tipo reporte: </label>
+          <select name="tipo_pdf">
+            <option value="Certificado">Certificado</option>
+            <option value="Cita" selected>Cita</option>
+            <option value="Diagnostico">Diagnostico</option>
+          </select>
+        </div>
+
+        <div class="fields">
+          <label for="nombre">Nombre: </label>
+          <input type="text" name="nombre" placeholder="Ingrese nombre">
+        </div>
+
+        <div class="fields">
+          <label for="telefono">Telefono </label>
+          <input type="text" name="telefono" placeholder="Ingrese telefono">
+        </div>
+
+        <div class="fields">
+          <label for="direccion">Direccion </label>
+          <input type="text" name="direccion" placeholder="Ingrese direccion">
+        </div>
+
+        <div class="fields">
+          <input type="submit" value="Enviar informacion">
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+  
+</body>
+</html>
